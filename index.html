@@ -11,16 +11,9 @@
 <body onload="search(11);">
 
     <div class="container">
-
-
-
         <br>
         <br>
         <br>
-
-        <!-- <input class="form-control" type="text"  id="city" placeholder="请输入要查询的城市名称" /> -->
-
-
         <br>
         <hr>
 
@@ -58,7 +51,6 @@
         function popfalse() {
             return false;
         }
-        //点击按钮触发的天气预报查询方法
         page = 11;
         $(".select").click(function () {
             vid = $(this).attr("id");
@@ -88,8 +80,6 @@
         })
 
         function search(page) {
-            //1获取文本框城市信息
-            //2 发后台发起ajax请求 jquery ｛请求的地址 请求的方式 请求参数 回调函数｝
             console.log(page);
             $.ajax({
                 type: "POST",
@@ -110,7 +100,6 @@
                         var str = "<td><th>" + "<a href='" + data.result[index].img + "'target='_blank'>" + "<img width='200px'  src='" + data.result[index].img + "'></a></th></td>";
                         tbody.append(str);
                         low = parseInt(index) + 1;
-                        // console.log(low);
                         if (low % num == 0) {
                             tbody.append("</tr><tr>");
                         }
